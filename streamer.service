@@ -1,0 +1,13 @@
+[Unit]
+Description=Streamer service
+
+[Service]
+ExecStart=/usr/bin/python3 /home/pi/streamer/streamer.py --key YOURKEYHERE
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=Streamer
+User=pi
+
+[Install]
+WantedBy=multi-user.target
