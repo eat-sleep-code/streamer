@@ -49,11 +49,11 @@ try:
 except:
 	height = 1080
 
-bitrate = args.bitrate or 15
+bitrate = args.bitrate or 5
 try: 
 	bitrate = int(bitrate)
 except:
-	bitrate = 15
+	bitrate = 5
 
 # Convert Bitrate to be used by video program
 if bitrate < 100:
