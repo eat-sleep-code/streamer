@@ -28,7 +28,7 @@ parser.add_argument('--rotate', dest='rotate', help='Rotate the camera in 90* in
 args = parser.parse_args()
 
 
-key = args.key or '
+key = args.key or ''
 
 fps = args.fps or 30
 try:
@@ -77,7 +77,7 @@ def StartStream():
 	global height
 	global bitrate
 	global rotate
-	subprocess.call('raspivid -o - -t 0 -vf -hf -fps ' + str(fps) + ' -w ' + str(width) + ' -h ' + str(height) + ' -b bitrate | avconv -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 -i /dev/zero -f h264 -i - -vcodec copy -acodec aac -ab 128k -g 50 -strict experimental -f flv rtmp://a.rtmp.youtube.com/live2/' + key, shell=True)	
+	subprocess.call('raspivid -o - -t 0 -vf -hf -fps ' + str(fps) + ' -w ' + str(width) + ' -h ' + str(height) + ' -b bitrate -rot ' + str(rotate) + ' | ffmpeg -re -ar 44100 -ac 2 -acodec pcm_s16le -f s16le -ac 2 -i /dev/zero -i - -vcodec copy -acodec aac -ab 384k -g 17 -strict experimental -f flv rtmp://a.rtmp.youtube.com/live2/' + key, shell=True)	
 						
 
 # === Stream Capture ========================================================
