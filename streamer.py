@@ -8,7 +8,7 @@ import sys
 import threading
 import time
 
-version = 2021.04.21'
+version = '2021.04.21'
 
 os.environ['TERM'] = 'xterm-256color'
 
@@ -18,12 +18,12 @@ echo = Echo()
 # === Argument Handling ========================================================
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--key dest='key help='Set the YouTube secret key type=str, required=True)
-parser.add_argument('--fps dest='fps help='Set the output framerate type=int)
-parser.add_argument('--width dest='width help='Set the horizontal resolution / width type=int)
-parser.add_argument('--height dest='height help='Set the vertical resolution / width type=int)
-parser.add_argument('--bitrate dest='bitrate help='Set the output bitrate in MB/s type=int)
-parser.add_argument('--rotate dest='rotate help='Rotate the camera in 90* increments type=int)
+parser.add_argument('--key', dest='key', help='Set the YouTube secret key', type=str, required=True)
+parser.add_argument('--fps', dest='fps', help='Set the output framerate', type=int)
+parser.add_argument('--width', dest='width', help='Set the horizontal resolution / width', type=int)
+parser.add_argument('--height', dest='height', help='Set the vertical resolution / width', type=int)
+parser.add_argument('--bitrate', dest='bitrate', help='Set the output bitrate in MB/s', type=int)
+parser.add_argument('--rotate', dest='rotate', help='Rotate the camera in 90* increments', type=int)
 
 args = parser.parse_args()
 
