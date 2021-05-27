@@ -9,8 +9,8 @@ sudo apt update
 
 echo ''
 echo -e '\033[93mInstalling prerequisites... \033[0m'
-sudo apt install -y git python3 python3-pip screen ffmpeg --force
-sudo pip3 install keyboard 
+sudo apt install -y git python3 python3-pip screen ffmpeg 
+sudo pip3 install keyboard --force
 
 echo '\033[93mProvisioning logs... \033[0m'
 sudo mkdir -p /home/pi/logs
